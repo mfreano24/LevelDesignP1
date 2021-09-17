@@ -189,6 +189,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void EnemyBounce()
+    {
+        extraMoveForce.y = 1.0f;
+    }
+
     public void SetCheckpoint(Vector2 pt)
     {
         checkpointValue = pt;
