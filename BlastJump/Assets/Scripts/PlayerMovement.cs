@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     //components on the player
-    BoxCollider2D coll;
+    CircleCollider2D coll;
     Rigidbody2D rb;
 
     //tracked private variables
@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
     bool canSlide = true;
     float jumpTimer = 0.25f;
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -107,12 +108,13 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position + groundCheckPoint, transform.position + groundCheckPoint + 0.1f * Vector3.down);
     }
+    */
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CircleCollider2D>();
 
         
         colliderOffset =  new Vector3(transform.localScale.x * coll.offset.x, transform.localScale.y * coll.offset.y, 0);
@@ -150,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 jump = 0;
-            }
+            } 
 
             
         }
@@ -184,7 +186,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.DrawLine(center, transform.position, Color.cyan);
             Vector3 force = (Vector3)((3.0f - dist) * blastForceMultiplier * ((Vector2)(transform.position) - center).normalized);
+            moveDirection.y = 0.0f;
             extraMoveForce = force;
+            extraMoveForce.x *= 2.0f;
             Debug.Log("BLAST: " + extraMoveForce);
         }
     }

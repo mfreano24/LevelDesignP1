@@ -9,6 +9,7 @@ public class EnemyDeath : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerMovement>().EnemyBounce();
+            GameManager.Instance.KillEnemy();
             Destroy(transform.parent.gameObject);
         }
         

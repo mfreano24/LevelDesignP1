@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -15,54 +13,61 @@ public class MovingPlatform : MonoBehaviour
     public Direction direction;
     Vector2 Offset = new Vector2();
 
-    Vector3 StartingPosition;
+    Vector3 StartingPosition = Vector3.zero;
 
     private void Start()
     {
         StartingPosition = transform.position;
-
-        if (Offset == Vector2.zero)
-        {
-            switch (direction)
-            {
-                case Direction.Horizontal:
-                    Offset = new Vector2((Amplitude) * Mathf.Sin(Time.time), 0.0f);
-                    break;
-
-                case Direction.Vertical:
-                    Offset = new Vector2(0.0f, (Amplitude) * Mathf.Sin(Time.time));
-                    break;
-
-            }
-        }
     }
 
-    /*
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        if (Offset == Vector2.zero)
+        if(StartingPosition == Vector3.zero)
         {
-            switch (direction)
-            {
-                case Direction.Horizontal:
-                    Offset = new Vector2((Amplitude) * Mathf.Sin(Time.time), 0.0f);
-                    break;
+            StartingPosition = transform.position;
+        }
+        
+        Gizmos.color = Color.green;
+        Vector3 amp = new Vector3();
+        switch (direction)
+        {
+            case Direction.Horizontal:
+                amp = new Vector3(Amplitude, 0.0f);
+                Gizmos.DrawLine(StartingPosition - amp, StartingPosition + amp);
+                Gizmos.DrawSphere(StartingPosition - amp, 0.25f);
+                Gizmos.DrawSphere(StartingPosition + amp, 0.25f);
+                break;
 
-                case Direction.Vertical:
-                    Offset = new Vector2(0.0f, (Amplitude) * Mathf.Sin(Time.time));
-                    break;
-
-            }
+            case Direction.Vertical:
+                amp = new Vector3(0.0f, Amplitude);
+                Gizmos.DrawLine(StartingPosition - amp, StartingPosition + amp);
+                Gizmos.DrawSphere(StartingPosition - amp, 0.25f);
+                Gizmos.DrawSphere(StartingPosition + amp, 0.25f);
+                break;
         }
 
-        Gizmos.DrawLine(StartingPosition, StartingPosition + (Vector3)Offset);
-        Gizmos.DrawLine(StartingPosition, StartingPosition - (Vector3)Offset);
-    }
-    */
 
-    void Update()
+
+    }
+
+    void FixedUpdate()
     {
+        switch (direction)
+        {
+            case Direction.Horizontal:
+                Offset = new Vector2((Amplitude) * Mathf.Sin(Time.time), 0.0f);
+                break;
+
+            case Direction.Vertical:
+                Offset = new Vector2(0.0f, (Amplitude) * Mathf.Sin(Time.time));
+                break;
+        }
+
         transform.position = StartingPosition + (Vector3)Offset;
     }
 }
+
+
+
+
+
