@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -120,6 +121,11 @@ public class PlayerMovement : MonoBehaviour
         colliderOffset =  new Vector3(transform.localScale.x * coll.offset.x, transform.localScale.y * coll.offset.y, 0);
 
         currentHealth = maxHealth;
+
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            checkpointValue = new Vector2(-8.1882f, -0.3017f);
+        }
 
     }
 

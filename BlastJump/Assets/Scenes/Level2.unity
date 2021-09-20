@@ -2337,16 +2337,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8116916988274292247, guid: 6af0573f9e01ac0479f31e7077af6a41, type: 3}
-      propertyPath: blastForceMultiplier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8116916988274292268, guid: 6af0573f9e01ac0479f31e7077af6a41, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8116916988274292242, guid: 6af0573f9e01ac0479f31e7077af6a41, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af0573f9e01ac0479f31e7077af6a41, type: 3}
 --- !u!1001 &784091250
 PrefabInstance:
@@ -79740,27 +79735,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1975900216743169830, guid: 1c674c412a9ead444a7094e93ae73d5d, type: 3}
   m_PrefabInstance: {fileID: 2052821475}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2089771966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8116916988274292268, guid: 6af0573f9e01ac0479f31e7077af6a41, type: 3}
-  m_PrefabInstance: {fileID: 763889581}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &2089771967
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089771966}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1001 &8826409894112473441
 PrefabInstance:
   m_ObjectHideFlags: 0
