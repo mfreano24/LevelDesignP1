@@ -65,6 +65,23 @@ public class MovingPlatform : MonoBehaviour
 
         transform.position = StartingPosition + (Vector3)Offset;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.transform.parent = transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.transform.parent = null;
+        }
+    }
+
 }
 
 

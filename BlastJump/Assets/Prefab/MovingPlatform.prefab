@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8394728547866778563}
   - component: {fileID: 2604259266860552015}
   - component: {fileID: 1769301092}
+  - component: {fileID: 3770743369781085888}
   m_Layer: 3
   m_Name: MovingPlatform
   m_TagString: Floor
@@ -124,3 +125,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!70 &3770743369781085888
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394728547866778560}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000004699477, y: 0.26590577}
+  m_Size: {x: 1.0000001, y: 1.5318239}
+  m_Direction: 1
